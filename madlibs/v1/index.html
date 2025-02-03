@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gracie Paterson's MadLibs V1</title>
+
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css" rel="stylesheet">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inria+Sans:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&display=swap" rel="stylesheet"> 
+    
+    <link href="https://fonts.googleapis.com/css2?family=Coming+Soon&display=swap" rel="stylesheet">
+
+    <link href="styles.css" rel="stylesheet">
+
+    <script src="script.js" defer></script> 
+
+</head>
+<body>
+    <header>
+        <h1>what's for dinner tonight?</h1>
+        <img src="images/basket.jpg" alt="basket" width="614" height="407" >
+
+    </header>
+
+    <main class="form">
+        <form>
+
+            <div id="form-items">
+                <div id="list-head">
+                <input type="text" id="name" placeholder="Gracie" required>
+                <label for="name">'s Grocery List</label>
+                </div>
+
+                <div>
+                <label for="adjective1">1. adjective</label>
+                <input type="text" id="adjective1" placeholder="silly" required>
+                </div>
+
+                <div>
+                <label for="fruitorveg">2. fruit or veggie</label>
+                <input type="text" id="fruitorveg" placeholder="brocoli" required>
+                </div>
+
+                <div>
+                <label for="verb">3. -ing verb</label>
+                <input type="text" id="verb" placeholder="jumping" required>
+                </div>
+
+                <div>
+                <label for="food">4. plural food</label>
+                <input type="text" id="food" placeholder="croutons" required>
+                </div>
+
+                <div>
+                <label for="adjective2">5. adjective</label>
+                <input type="text" id="adjective2" placeholder="tiny" required>
+                </div>
+
+                <div>
+                <label for="bodypart">6. body part</label>
+                <input type="text" id="bodypart" placeholder="knee" required>
+                </div>
+
+                <div>
+                <label for="liquid">7. liquid</label>
+                <input type="text" id="liquid" placeholder="juice" required>
+                </div>
+
+                <div id="submit">
+                <input type="submit">
+                </div>
+            </div>
+
+        </form>
+
+        <section id="overlay" class="hidden">
+            <article>
+                <p>Today’s culinary masterpiece, created by the one and only Gracie, is a silly broccoli soup. It features jumping croutons and a tiny knee of juice. Enjoy!! </p>
+                <button>try again!</button>
+            </article>
+        
+        </section>
+
+    </main>
+    
+</body>
+</html>
