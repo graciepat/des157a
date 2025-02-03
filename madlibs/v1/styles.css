@@ -22,6 +22,7 @@ body {
     gap: 40px;
     width: 1200px;
     height: 750px;
+    justify-content: center;
     margin: auto;
 }
 
@@ -36,11 +37,11 @@ h1 {
     font-family: "Inria Sans", serif;
     font-weight: 400;
     font-style: normal;
-    font-size: 350%;
+    font-size: 300%;
 }
 
 img {
-    margin-top: 70px
+    margin-top: 132px
 }
 
 #list-head label {
