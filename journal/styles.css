@@ -13,6 +13,12 @@ img {
     display: block;
 }
 
+article img {
+    width: 400px;
+    height: auto;
+    padding-top: 20px;
+}
+
 header, main {
     padding-left: 350px;
     padding-right: 350px;
@@ -80,4 +86,9 @@ footer {
 
 footer a {
     color: white;
+}
+
+figcaption {
+    text-align: center;
+    font-size: 80%;
 }
