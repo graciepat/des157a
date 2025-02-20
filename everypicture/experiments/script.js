@@ -2,7 +2,7 @@
     "use strict";
     console.log("reading JS");
 
-    const image = document.querySelector('img');
+    const image = document.querySelectorAll('img');
 
     image.addEventListener('click', function(event){
         event.preventDefault();
