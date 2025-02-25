@@ -77,7 +77,6 @@
     // JS to close all of the overlays using the close button or the escape key
     for(const eachCloseBttn of closeBttns){
         eachCloseBttn.addEventListener('click', function(event){
-            console.log('clicked');
             event.preventDefault();
             for( const eachOverlay of allOverlays){
                 eachOverlay.className = 'overlay hidden';
