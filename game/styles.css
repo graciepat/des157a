@@ -1,0 +1,66 @@
+h1, h2, h3, p, ul, ol {
+    margin: 0; 
+    padding: 0;
+}
+
+nav ul, nav ol {
+    list-style-type: none;
+}
+
+img {
+    max-width: 100%; 
+    height: auto; 
+    display: block;
+    margin: auto;
+}
+
+article img {
+    width: 800px;
+    height: auto;
+    padding-top: 20px;
+}
+
+header, main {
+    padding-left: 350px;
+    padding-right: 350px;
+}
+
+body {
+    font-family: "Inter", serif;
+    font-weight: 400;
+    font-style: normal;
+    background-color: rgb(173, 201, 232);
+}
+
+header {
+    text-align: center;
+    padding-top: 50px;
+    padding-bottom: 50px;
+    color: rgb(23, 50, 81);
+}
+
+header h1 {
+    font-size: 280%;
+    font-weight: 600;
+}
+
+header h2 {
+    font-size: 80%;
+    padding-top: 20px;
+    font-weight: 400;
+}
+
+article {
+    padding: 20px;
+    background-color: white;
+    margin-bottom: 15px;
+}
+
+h2 {
+    font-size: 150%;
+    text-transform: uppercase;
+    padding-bottom: 10px;
+}
+
+
+
