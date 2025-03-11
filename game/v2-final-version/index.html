@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gracie Paterson's Game On!</title>
+
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css" rel="stylesheet">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Actor&display=swap" rel="stylesheet">
+
+    <link href="https://fonts.googleapis.com/css2?family=Kablammo&display=swap" rel="stylesheet">
+
+    <link href="styles.css" rel="stylesheet">
+
+    <script src="script.js" defer></script> 
+
+</head>
+<body>
+
+    <main>
+       <img src="images/water.png" id="water" alt="water" width="1200" height="720">
+       
+       <img src="images/shark1.png" id="shark1" alt="shark" width="382" height="383">
+       <img src="images/shark2.png" id="shark2" alt="shark" width="382" height="383">
+       <img src="images/rock.png" id="rock" alt="rock" width="481" height="161">
+
+        <div id="dice">
+            <!-- <img src="images/1-yellow-fish.png" id="dice1" alt="dice 1" width="290" height="290">
+            <img src="images/3-yellow-fish.png" id="dice2" alt="dice 2" width="290" height="290"> -->
+        </div>
+
+       <div id="score1">
+            <div id="player1score">#</div>
+            <img src="images/yellow-fish.png" alt="yellow fish" width="59" height="59">
+        </div>
+        <div id="score2">
+            <div id="player2score">#</div>
+            <img src="images/orange-fish.png" alt="orange fish" width="59" height="59">
+        </div>
+       
+       <div id="buttons">
+            <!-- <button id="rollagain">Roll Again</button>
+            <p>or</p>
+            <button id="pass">Pass</button> -->
+        </div>
+
+        <div id="game-text"></div>
+
+        <button id="rock-button">Want to Quit?</button>
+
+    </main>
+
+    <section id="overlay" class="showing">
+        <article>
+            <h1>Game of SHARK</h1>
+            <p>There are two players. The player whose turn it is rolls the dice. The total of the roll is added to the current player's score, unless either die comes up as a "one". If this happens, this player's turn is over, and it is the other player’s turn. After each roll, the current player can either roll again, (assuming a "one" was not rolled) or if the current player feels that luck is running thin, they can pass to the other player. The first player to get 30 points or higher wins.</p> 
+            <p>Oh, and if you roll two "ones" (snake eyes), your current score gets zeroed out. So don’t do that.</p>
+            <button class="play">Play!</button>
+        </article>
+    </section>
+
+    
+</body>
+</html>
