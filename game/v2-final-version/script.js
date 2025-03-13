@@ -2,6 +2,20 @@
     "use strict";
     console.log("reading JS");
 
+    document.addEventListener('DOMContentLoaded', function() {
+        const splashSound = document.querySelector('#splash-sound');
+        const shark1 = document.querySelector('#shark1');
+        const shark2 = document.querySelector('#shark2');
+    
+        shark1.addEventListener('mouseenter', function() {
+            splashSound.play();
+        });
+    
+        shark2.addEventListener('mouseenter', function() {
+            splashSound.play();
+        });
+    });
+
     const startGame = document.querySelector('.play');
     const gameControl = document.querySelector('#gamecontrol');
     const game = document.querySelector('#game-text');
@@ -11,9 +25,9 @@
     const diceArea = document.querySelector('#dice');
 
     const gameData = {
-        player1dice: ['1-orange-fish.png', '2-orange-fish.png', '3-orange-fish.png', 
+        player2dice: ['1-orange-fish.png', '2-orange-fish.png', '3-orange-fish.png', 
                '4-orange-fish.png', '5-orange-fish.png', '6-orange-fish.png'],
-        player2dice: ['1-yellow-fish.png', '2-yellow-fish.png', '3-yellow-fish.png', 
+        player1dice: ['1-yellow-fish.png', '2-yellow-fish.png', '3-yellow-fish.png', 
         '4-yellow-fish.png', '5-yellow-fish.png', '6-yellow-fish.png'],
         players: ['player 1', 'player 2'],
         score: [0, 0],
@@ -51,16 +65,18 @@
     }
 
     function throwDice(){
+        document.getElementById('dice-sound').play();
+
         actionArea.innerHTML = '';
         gameData.roll1 = Math.floor(Math.random() * 6) + 1;
         gameData.roll2 = Math.floor(Math.random() * 6) + 1;
         game.innerHTML = `<p>Roll the dice for the ${gameData.players[gameData.index]}</p>`;
         if(gameData.index){
-            diceArea.innerHTML += `<img src="images/${gameData.player2dice[gameData.roll1-1]}"><img src="images/${gameData.dice[gameData.roll2-1]}">`;
+            diceArea.innerHTML = `<img src="images/${gameData.player2dice[gameData.roll1-1]}"><img src="images/${gameData.player2dice[gameData.roll2-1]}">`;
         } else {
-            diceArea.innerHTML += `<img src="images/${gameData.player1dice[gameData.roll1-1]}"><img src="images/${gameData.dice[gameData.roll2-1]}">`;
-
+            diceArea.innerHTML = `<img src="images/${gameData.player1dice[gameData.roll1-1]}"><img src="images/${gameData.player1dice[gameData.roll2-1]}">`;
         }
+
         gameData.rollSum = gameData.roll1 + gameData.roll2;
 
         if (gameData.rollSum === 2){
@@ -68,18 +84,18 @@
             gameData.score[gameData.index] = 0;
             gameData.index ? (gameData.index = 0) : (gameData.index = 1);
             showCurrentScore();
-            setTimeout(setUpTurn, 2000);
+            setTimeout(setUpTurn, 3000);
         }
 
         else if (gameData.roll1 === 1 || gameData.roll2 === 1){
             gameData.index ? (gameData.index = 0) : (gameData.index = 1);
             game.innerHTML += `<p>Sorry, one of your rolls was a one, switching to ${gameData.players[gameData.index]}</p>`;
-            setTimeout(setUpTurn, 2000);
+            setTimeout(setUpTurn, 3000);
         }
 
         else {
             gameData.score[gameData.index] = gameData.score[gameData.index] + gameData.rollSum;
-            actionArea.innerHTML = '<button id="rollagain">Roll again</button> or <button id="pass">Pass</button>';
+            actionArea.innerHTML = '<button id="rollagain">Roll again</button><p>or</p><button id="pass">Pass</button>';
 
             document.querySelector('#rollagain').addEventListener('click', function(){
                 throwDice();
@@ -95,10 +111,16 @@
     }
 
     function checkWinningCondition() {
-        if (gameData.score[gameData.index] > gameData.gameEnd) {
-            score.innerHTML = `<h2>${gameData.players[gameData.index]} wins with ${gameData.score[gameData.index]} points!</h2>`;
+        if (gameData.score[gameData.index] > gameData.gameEnd) { 
+
+            if (gameData.index === 0){
+                game.innerHTML = `<h2>${gameData.players[gameData.index]} wins with ${gameData.score[gameData.index]} points!</h2>`;
+            } else {
+                game.innerHTML = `<h2>${gameData.players[gameData.index]} wins with ${gameData.score[gameData.index]} points!</h2>`;
+            }
             actionArea.innerHTML = '';
-            document.querySelector('#quit').innerHTML = 'Start a New Game?';
+            document.querySelector('#rock-button').innerHTML = 'Start a New Game?';
+
         } else {
             showCurrentScore();
         }

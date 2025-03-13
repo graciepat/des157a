@@ -19,12 +19,35 @@ main #shark1 {
     margin: 440px 20px 20px 50px;
 }
 
+main #shark1:hover {
+    animation: wiggle 0.5s infinite;
+}
+
 main #shark2 {
     z-index: 2;
     position: absolute;
     width: 275px;
     height: auto;
     margin: 440px 20px 20px 880px;
+}
+
+main #shark2:hover {
+    animation: wiggle 0.5s infinite;
+}
+
+@keyframes wiggle {
+    0%, 100% {
+        transform: rotate(0deg);
+    }
+    25% {
+        transform: rotate(5deg);
+    }
+    50% {
+        transform: rotate(-5deg);
+    }
+    75% {
+        transform: rotate(5deg);
+    }
 }
 
 main #rock {
@@ -38,9 +61,14 @@ main #rock {
 main #dice {
     position: absolute;
     z-index: 3;
-    width: 200px;
     height: auto;
     margin: 280px auto auto 400px;
+    display: flex;
+    gap: 10px;
+}
+
+#dice img {
+    width: 200px;
 }
 
 #buttons {
@@ -56,6 +84,7 @@ main #dice {
     color: white;
     border-radius: 100px;
     width: 130px;
+    height: 50px;
     border-color: rgba(7, 98, 172, 1);
     font-family: "Actor", sans-serif;
     font-weight: 400;
@@ -66,7 +95,9 @@ main #dice {
 #rock-button {
     position: absolute;
     z-index: 7;
-    margin: 690px auto auto 540px;
+    top: 92%; 
+    left: 50%; 
+    transform: translate(-50%, -50%);
     background-color: rgba(217, 217, 217, 1);
     border-color: rgba(217, 217, 217, 1);
     border-radius: 100px;
@@ -82,6 +113,14 @@ p {
     font-weight: 400;
     font-style: normal;
     color: white;
+    text-align: center;
+}
+
+#buttons p {
+    font-family: "Actor", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    color: white; 
 }
 
 #score1 {
@@ -114,11 +153,21 @@ p {
 #game-text {
     position: absolute;
     z-index: 8;
-    margin: 180px auto auto 470px; 
+    top: 25%; 
+    left: 50%; 
+    transform: translate(-50%, -50%);
     font-family: "Actor", sans-serif;
     font-weight: 400;
     font-style: normal;
     font-size: 150%;
+}
+
+h2 {
+    font-family: "Actor", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 200%;
+    color: white;
 }
 
 .hidden {
@@ -176,5 +225,19 @@ p {
 
 #overlay article h1 {
     text-align: center;
+}
+
+footer {
+    position: absolute;
+    z-index: 6;
+    margin: 725px auto auto 1145px;
+    font-family: "Actor", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 80%;
+}
+
+footer a {
+    color: white;
 }
 
